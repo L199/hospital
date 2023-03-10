@@ -22,9 +22,10 @@ public class Atendimento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column(length=150, nullable = false)
-    private String nome;
+    private String data;
     @Column(length = 20, nullable= false, unique=true)
-    private String telefone;
+    private String exame;
+    
     @OneToMany(mappedBy = "atendimento")
     @JsonIgnoreProperties("atendimento") // quando buscar os dados dos veículos, ignore os dados do proprietario
     private List<Paciente> paciente;
